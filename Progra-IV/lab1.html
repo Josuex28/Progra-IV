@@ -28,7 +28,7 @@
                         </button>
                     </form>
 
-                    <!-- Campo de búsqueda -->
+                    
                     <div class="mt-4">
                         <input v-model="busqueda" type="text" class="form-control" placeholder="Buscar autor...">
                     </div>
@@ -93,7 +93,7 @@
                 async guardarAutor() {
                     try {
                         if (this.autor.id) {
-                            // Actualizar autor existente
+                           
                             await db.autores.put({
                                 id: this.autor.id,
                                 nombre: this.autor.nombre,
@@ -101,7 +101,7 @@
                             });
                             console.log('Autor actualizado correctamente');
                         } else {
-                            // Guardar nuevo autor
+                            
                             await db.autores.add({
                                 nombre: this.autor.nombre,
                                 apellido: this.autor.apellido
@@ -128,7 +128,7 @@
                 },
 
                 editarAutor(autor) {
-                    this.autor = { ...autor }; // Copiar el objeto para evitar cambios en la lista antes de guardar
+                    this.autor = { ...autor }; 
                 },
 
                 cancelarEdicion() {
